@@ -22,9 +22,9 @@ var graph = model.graph;
 /// Start unit testing.
 ///
 
-describe('sugiyama', function(){
+describe("bbop's sugiyama", function(){
     
-    it('first graph', function(){	
+    it('first graph', function(){
 
 	// Create graph as described:
 	//
