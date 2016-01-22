@@ -43,25 +43,13 @@ describe("bbop's random corner layout", function(){
 	var leng = new layout();
 	var l = leng.render(g, 'random-corner');
 
-	// Test the limits of the layout.
+	// Test the limits of the layout--very improbable to actually
+	// hit the corner.
 	us.each(l.nodes, function(mnode){
-	    assert.isBelow(mnode.x, 126, 'is below x');
-	    assert.isBelow(mnode.y, 126, 'is below y');
-	    assert.isAbove(mnode.x, 74, 'is above x');
-	    assert.isAbove(mnode.y, 74, 'is above y');
+	    assert.isBelow(mnode.x, 1.0, 'is below x');
+	    assert.isBelow(mnode.y, 1.0, 'is below y');
+	    assert.isAbove(mnode.x, 0.0, 'is above x');
+	    assert.isAbove(mnode.y, 0.0, 'is above y');
 	});
-	// var ns = l.nodes;
-	// assert.isBelow(ns[0].x, 126, 'is below x');
-	// assert.isBelow(ns[0].y, 126, 'is below y');
-	// assert.isAbove(ns[0].x, 74, 'is above x');
-	// assert.isAbove(ns[0].y, 74, 'is above y');
-	// assert.isBelow(ns[1].x, 126, 'is below x');
-	// assert.isBelow(ns[1].y, 126, 'is below y');
-	// assert.isAbove(ns[1].x, 74, 'is above x');
-	// assert.isAbove(ns[1].y, 74, 'is above y');
-	// assert.isBelow(ns[2].x, 126, 'is below x');
-	// assert.isBelow(ns[2].y, 126, 'is below y');
-	// assert.isAbove(ns[2].x, 74, 'is above x');
-	// assert.isAbove(ns[2].y, 74, 'is above y');
     });
 });

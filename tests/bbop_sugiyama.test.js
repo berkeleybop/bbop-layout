@@ -314,5 +314,52 @@ describe("bbop's sugiyama", function(){
 
     });
 
+    it('layout feel test.', function(){
+
+	//  a
+	//  |\
+	//  b c
+	var bad = {
+	    "nodes": [
+		{"id": "a"},
+		{"id": "b"},
+		{"id": "c"},
+		{"id": "d"}
+	    ],
+	    "edges": [
+		{"sub": "a",
+		 "obj": "b"},
+		{"sub": "a",
+		 "obj": "c"},
+		{"sub": "a",
+		 "obj": "d"}
+	    ]
+	};
+	
+	var g = new graph();
+	g.load_base_json(bad);
+	
+	// Jimmy out the sugiyama core for testing.
+	var leng = new layout();
+	var l = leng.render(g, 'bbop-sugiyama');
+
+	//console.log(l);
+
+	// Test the limits of the layout. This also acts as a basic
+	// sizing test.
+	var zero_zero_count = 0;
+	us.each(l.nodes, function(mnode){
+	    assert.isBelow(mnode.x, 2.000001, 'is below x');
+	    assert.isBelow(mnode.y, 2.000001, 'is below y');
+	    assert.isAbove(mnode.x, -0.00001, 'is above x');
+	    assert.isAbove(mnode.y, -0.00001, 'is above y');
+
+	    if( mnode.x === 0 && mnode.y === 0 ){
+		zero_zero_count += 1;
+	    }
+	});
+
+    });
+
 });
 

@@ -47,7 +47,8 @@ describe("checking the layout systems in cytoscape", function(){
 
 	//console.log(l);
 
-	// Test the limits of the layout.
+	// Test the limits of the layout. This also acts as a basic
+	// sizing test.
 	var zero_zero_count = 0;
 	us.each(l.nodes, function(mnode){
 	    assert.isBelow(mnode.x, 2.0, 'is below x');
