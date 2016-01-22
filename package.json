@@ -1,6 +1,6 @@
 {
     "name": "bbop-layout",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "license": "BSD-3-Clause",
     "description": "A collection of external and in-house layout engines producing an abstract common output for JavaScript graphs.",
     "keywords": [
