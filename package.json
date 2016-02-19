@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "bbop-core": "0.0.5",
-        "bbop-graph": "0.0.16",
+        "bbop-graph": "0.0.17",
         "cytoscape": "2.4.6",
         "underscore": "1.8.3"
     },
